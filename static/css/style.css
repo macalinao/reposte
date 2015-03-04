@@ -22,3 +22,15 @@ li {
 #quad > li > a:hover {
   background-color: #ccc
 }
+
+#centerpiece {
+  width: 50%;
+}
+
+#title {
+  font-size: 30px;
+}
+
+#byline {
+  font-size: 20px;
+}

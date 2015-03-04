@@ -3,9 +3,9 @@
 <div class="container">
   {% block header %}{% endblock %}
   <div class="row centered">
-    <h1>{{ post.title }}</h1>
-    <h2>Submitted <span class="date">{{ post.created_utc }}</span></h2>
-    <img src="{{ post.url }}" />
+    <h1 id="title">{{ post.title }}</h1>
+    <img src="{{ post.url }}" id="centerpiece" />
+    <h4 id="byline">Submitted <span class="date">{{ post.created_utc }}</span></h4>
   </div>
   <div class="row">
     <h4>Find reposts for subreddits...</h4>
