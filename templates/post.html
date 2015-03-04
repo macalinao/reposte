@@ -4,8 +4,10 @@
   {% block header %}{% endblock %}
   <div class="row centered">
     <h1 id="title">{{ post.title }}</h1>
-    <img src="{{ post.url }}" id="centerpiece" />
-    <h4 id="byline">Submitted <span class="date">{{ post.created_utc }}</span></h4>
+    <a href="{{ post.url }}" target="_blank">
+      <img src="{{ post.url }}" id="centerpiece" />
+    </a>
+    <h4 id="byline">Submitted <span class="date">{{ post.created_utc }}</span> to <a href="http://reddit.com/r/{{ sub }}" target="_blank">/r/{{ sub }}</a></h4>
   </div>
   <div class="row">
     <h4>Find reposts for subreddits...</h4>
