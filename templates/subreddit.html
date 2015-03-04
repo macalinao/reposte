@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
 <center>
-  <h1>{{ sub.title }}</h1>
-  <h2>Submitted <span class="date">{{ sub.created_utc }}</span></h2>
-  <img src="{{ sub.url }}" />
+  <h1>{{ post.title }}</h1>
+  <h2>Submitted <span class="date">{{ post.created_utc }}</span></h2>
+  <img src="{{ post.url }}" />
 </center>
 {% endblock %}
