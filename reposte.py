@@ -20,8 +20,12 @@ def find_sub():
 
 def find_repost(sub):
     """ Finds a good post to repost. """
-    submissions = r.get_subreddit(sub).get_top_from_year(limit = 100)
-    return random.choice(list(submissions))
+
+    # Filter out self posts
+    submissions = [s for s in r.get_subreddit(sub).get_top_from_year(limit = 100) if not s.is_self]
+
+    # Pick random
+    return random.choice(submissions)
 
 @app.route('/')
 def index():
