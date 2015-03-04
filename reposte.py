@@ -1,5 +1,6 @@
 import os
 import praw
+import random
 from datetime import date
 from flask import Flask, render_template
 
@@ -15,8 +16,8 @@ def index():
 
 @app.route('/r/<subreddit>')
 def subreddit(subreddit):
-    submissions = r.get_subreddit(subreddit).get_new(limit = 100)
-    return render_template('subreddit.html', submissions=submissions)
+    submissions = r.get_subreddit(subreddit).get_top_from_year(limit = 100)
+    return render_template('subreddit.html', sub = random.choice(list(submissions)))
 
 if __name__ == '__main__':
     app.run()

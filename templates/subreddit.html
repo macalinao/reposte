@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
-<ul>
-  {% for sub in submissions %}
-  <li>{{ sub.title }} (<span class="date">{{ sub.created_utc }}</span>)</li>
-  {% endfor %}
-</ul>
+<center>
+  <h1>{{ sub.title }}</h1>
+  <h2>Submitted <span class="date">{{ sub.created_utc }}</span></h2>
+  <img src="{{ sub.url }}" />
+</center>
 {% endblock %}
