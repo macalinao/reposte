@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+<ul>
+  {% for sub in submissions %}
+  <li>{{ sub.title }} (<span class="date">{{ sub.created_utc }}</span>)</li>
+  {% endfor %}
+</ul>
+{% endblock %}
