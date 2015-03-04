@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+  {% block header %}{% endblock %}
+  <div class="row centered">
+    <h1>{{ post.title }}</h1>
+    <h2>Submitted <span class="date">{{ post.created_utc }}</span></h2>
+    <img src="{{ post.url }}" />
+  </div>
+</div>
+{% endblock %}

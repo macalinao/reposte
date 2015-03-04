@@ -18,18 +18,19 @@ def find_sub():
     """ Finds a good subreddit to post in. """
     return random.choice(top_subs)
 
-def find_repost():
+def find_repost(sub):
     """ Finds a good post to repost. """
-    submissions = r.get_subreddit(subreddit).get_top_from_year(limit = 100)
+    submissions = r.get_subreddit(sub).get_top_from_year(limit = 100)
     return random.choice(list(submissions))
 
 @app.route('/')
 def index():
-    return 'Hello world! %s' % find_sub()
+    sub = find_sub()
+    return render_template('index.html', post = find_repost(sub), sub = sub)
 
-@app.route('/r/<subreddit>')
-def subreddit(subreddit):
-    return render_template('subreddit.html', post = find_repost())
+@app.route('/r/<sub>')
+def sub(sub):
+    return render_template('subreddit.html', post = find_repost(sub), sub = sub)
 
 if __name__ == '__main__':
     app.run()
