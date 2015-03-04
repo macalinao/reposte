@@ -24,6 +24,8 @@ def find_repost(sub):
     # Filter out self posts
     submissions = [s for s in r.get_subreddit(sub).get_top_from_year(limit = 100) if not s.is_self]
 
+    if not submissions: return None
+
     # Pick random
     return random.choice(submissions)
 
