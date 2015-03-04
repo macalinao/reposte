@@ -5,13 +5,16 @@ Tool to find good things to repost on Reddit based on statistics.
 
 ## Setup
 
-Run
+First, get `virtualenv` using `sudo pip install virtualenv`.
+
+Once you have that out of the way, run the following commands:
 
 ```
-source venv/bin/activate
+$ virtualenv venv
+$ source venv/bin/activate
 ```
 
-to set up the virtual environment.
+This will set up a virtual environment in which you can run your Python in.
 
 ## License
 MIT
