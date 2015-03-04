@@ -26,11 +26,11 @@ def find_repost(sub):
 @app.route('/')
 def index():
     sub = find_sub()
-    return render_template('index.html', post = find_repost(sub), sub = sub)
+    return render_template('index.html', post = find_repost(sub), sub = sub, top_subs = top_subs)
 
 @app.route('/r/<sub>')
 def sub(sub):
-    return render_template('subreddit.html', post = find_repost(sub), sub = sub)
+    return render_template('subreddit.html', post = find_repost(sub), sub = sub, top_subs = top_subs)
 
 if __name__ == '__main__':
     app.run()

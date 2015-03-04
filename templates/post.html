@@ -7,5 +7,13 @@
     <h2>Submitted <span class="date">{{ post.created_utc }}</span></h2>
     <img src="{{ post.url }}" />
   </div>
+  <div class="row">
+    <h4>Find reposts for subreddits...</h4>
+    <ul id="quad">
+      {% for s in top_subs %}
+      <li><a href="/r/{{ s }}">{{ s }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 {% endblock %}
